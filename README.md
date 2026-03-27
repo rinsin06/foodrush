@@ -122,16 +122,3 @@ Key variables:
 - `RAZORPAY_KEY_ID` / `RAZORPAY_KEY_SECRET` - Payment gateway keys
 - `VITE_OPENAI_MOCK=true` - Use mock AI responses (no API key needed)
 
-## 🚢 CI/CD
-
-GitHub Actions pipelines are configured:
-- **Backend:** Tests all microservices in matrix, builds Docker images, deploys via SSH
-- **Frontend:** Lints, builds, pushes Docker image
-
-Configure these GitHub secrets:
-- `PROD_HOST`, `PROD_USER`, `SSH_PRIVATE_KEY` - For deployment
-- `VITE_API_BASE_URL`, `VITE_RAZORPAY_KEY` - For frontend build
-
-## 📜 License
-
-MIT License - See LICENSE file for details
