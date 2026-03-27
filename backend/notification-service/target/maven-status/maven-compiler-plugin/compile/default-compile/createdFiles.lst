@@ -1,0 +1,7 @@
+com/foodrush/notification/model/NotificationEvent$NotificationEventBuilder.class
+com/foodrush/notification/event/OrderEvent.class
+com/foodrush/notification/consumer/OrderEventConsumer.class
+com/foodrush/notification/service/EmailService.class
+com/foodrush/notification/config/KafkaConfig.class
+com/foodrush/notification/NotificationServiceApplication.class
+com/foodrush/notification/model/NotificationEvent.class

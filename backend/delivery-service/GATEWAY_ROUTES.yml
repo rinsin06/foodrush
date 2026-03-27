@@ -1,0 +1,16 @@
+# Add this route to api-gateway/src/main/resources/application.yml
+# inside the spring.cloud.gateway.routes list:
+
+      # ── Delivery Service ──────────────────────────────────────
+      - id: delivery-service-public
+        uri: lb://delivery-service
+        predicates:
+          - Path=/api/v1/delivery/track/**
+        # No AuthFilter — allow unauthenticated tracking (optional)
+
+      - id: delivery-service
+        uri: lb://delivery-service
+        predicates:
+          - Path=/api/v1/delivery/**
+        filters:
+          - name: AuthenticationFilter

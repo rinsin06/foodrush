@@ -1,0 +1,5 @@
+/Users/riyamariya/Downloads/foodrush/backend/api-gateway/src/main/java/com/foodrush/gateway/config/FallbackController.java
+/Users/riyamariya/Downloads/foodrush/backend/api-gateway/src/main/java/com/foodrush/gateway/config/WebFluxConfig.java
+/Users/riyamariya/Downloads/foodrush/backend/api-gateway/src/main/java/com/foodrush/gateway/filter/AuthenticationFilter.java
+/Users/riyamariya/Downloads/foodrush/backend/api-gateway/src/main/java/com/foodrush/gateway/util/JwtUtil.java
+/Users/riyamariya/Downloads/foodrush/backend/api-gateway/src/main/java/com/foodrush/gateway/GatewayApplication.java

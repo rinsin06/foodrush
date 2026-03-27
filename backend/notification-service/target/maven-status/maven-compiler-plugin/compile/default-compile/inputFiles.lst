@@ -1,0 +1,6 @@
+/Users/riyamariya/Downloads/foodrush/backend/notification-service/src/main/java/com/foodrush/notification/model/NotificationEvent.java
+/Users/riyamariya/Downloads/foodrush/backend/notification-service/src/main/java/com/foodrush/notification/service/EmailService.java
+/Users/riyamariya/Downloads/foodrush/backend/notification-service/src/main/java/com/foodrush/notification/NotificationServiceApplication.java
+/Users/riyamariya/Downloads/foodrush/backend/notification-service/src/main/java/com/foodrush/notification/config/KafkaConfig.java
+/Users/riyamariya/Downloads/foodrush/backend/notification-service/src/main/java/com/foodrush/notification/consumer/OrderEventConsumer.java
+/Users/riyamariya/Downloads/foodrush/backend/notification-service/src/main/java/com/foodrush/notification/event/OrderEvent.java

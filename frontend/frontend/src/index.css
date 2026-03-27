@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 
+           bg-white dark:bg-gray-800 text-gray-900 dark:text-white 
+           focus:outline-none focus:ring-2 focus:ring-orange-400 
+           placeholder-gray-400 dark:placeholder-gray-500 transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold 
+           py-2.5 px-6 rounded-xl hover:opacity-90 transition-all 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 
+           font-semibold py-2.5 px-6 rounded-xl hover:bg-gray-200 
+           dark:hover:bg-gray-600 transition-colors;
+  }
+
+  .skeleton {
+    @apply bg-gray-200 dark:bg-gray-700 animate-pulse rounded;
+  }
+
+  .badge {
+    @apply text-xs font-medium px-2.5 py-0.5 rounded-full;
+  }
+}

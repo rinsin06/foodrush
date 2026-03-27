@@ -1,0 +1,23 @@
+# GATEWAY AuthenticationFilter UPDATE REQUIRED
+# =============================================
+# The delivery service register endpoint needs X-User-Email header.
+# Update your AuthenticationFilter.java in api-gateway to also forward email:
+
+# Find where you set X-User-Id and add X-User-Email right after:
+
+# BEFORE (in AuthenticationFilter.java):
+#   exchange.getRequest().mutate()
+#       .header("X-User-Id", String.valueOf(userId))
+#       .build();
+
+# AFTER:
+#   String email = jwtUtil.getEmail(token);   // add getEmail() to JwtUtil if not present
+#   exchange.getRequest().mutate()
+#       .header("X-User-Id", String.valueOf(userId))
+#       .header("X-User-Email", email)
+#       .build();
+
+# In JwtUtil.java add:
+#   public String getEmail(String token) {
+#       return extractClaim(token, Claims::getSubject); // subject is email in your JWT
+#   }

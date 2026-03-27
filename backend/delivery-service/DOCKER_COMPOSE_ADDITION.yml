@@ -1,0 +1,43 @@
+# Add this to your root docker-compose.yml services section:
+
+  delivery-db:
+    image: mysql:8.0
+    container_name: delivery-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: delivery_db
+    ports:
+      - "3311:3306"
+    volumes:
+      - delivery_db_data:/var/lib/mysql
+    networks:
+      - foodrush-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  delivery-service:
+    build: ./delivery-service
+    container_name: delivery-service
+    ports:
+      - "8087:8087"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://delivery-db:3306/delivery_db?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+    depends_on:
+      delivery-db:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+      kafka:
+        condition: service_started
+    networks:
+      - foodrush-network
+
+# Also add to the volumes section at bottom:
+# delivery_db_data:
